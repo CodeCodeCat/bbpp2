@@ -22,7 +22,10 @@ showsql("SELECT * FROM `users` WHERE `first` LIKE '%3%'");
 showsql("SELECT *
  FROM `users` INNER JOIN (SELECT `user_id` FROM `user_books` INNER JOIN (SELECT * FROM `books` WHERE `title` = 'Book #45') AS T3) ON `user_books`.`bid` = `user`.`bid`) ON `user`.`id` = `user_books`.`user_id`");
 
+
+
 showsql("ALTER TABLE  `books` ADD  `isbestseller` BOOLEAN NOT NULL ;");
+
 
 showsql("UPDATE `users` INNER JOIN (SELECT (count(*) sa `count`) ON `users`.id = `user_books`.`user_id` WHERE `count` > 10");
 
